@@ -8,10 +8,11 @@ public class Arriver: SteeringBehavior {
     int decelerationConstant;
     private float tweaker = 1.7f;
 	
-    public Arriver(Rigidbody rb,int decelerationConstant )
+    public Arriver(Rigidbody rb,int decelerationConstant,float tweaker = 1.7f )
     {
         this.rb = rb;
         this.decelerationConstant = decelerationConstant;
+        this.tweaker = tweaker;
     }
 
     public void SetArrivalPosition(Vector3 targetPosition)

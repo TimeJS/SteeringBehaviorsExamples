@@ -8,6 +8,7 @@ public class ClickArriver : MonoBehaviour
     private Arriver arriver;
     private Breaker breaker;
     public int decelerationConstant = 1;
+    public float tweaker;
     void Start()
     {
         Rigidbody rb = GetComponent<Rigidbody>();
