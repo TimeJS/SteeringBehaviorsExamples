@@ -403,6 +403,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -4931136737985674439, guid: 336220e9684644c49bd17e6cca2fd71a, type: 3}
+      propertyPath: tweaker
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -4931136737985674439, guid: 336220e9684644c49bd17e6cca2fd71a, type: 3}
       propertyPath: decelerationConstant
       value: 1
       objectReference: {fileID: 0}
