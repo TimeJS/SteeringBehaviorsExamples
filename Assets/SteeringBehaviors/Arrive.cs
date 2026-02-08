@@ -6,7 +6,7 @@ public class Arriver: SteeringBehavior {
     bool unset = true;
     Rigidbody rb;
     int decelerationConstant;
-    private float tweaker = 1.7f;
+    public float tweaker = 1.7f;
 	
     public Arriver(Rigidbody rb,int decelerationConstant,float tweaker = 1.7f )
     {
