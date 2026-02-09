@@ -23,9 +23,10 @@ public class PathFollower : SteeringBehavior
 
     public void AddDestination(Vector3 destination)
     {
-        pathQueue.Enqueue(destination);
+        Debug.Log("Adding destination");
         if (currentBehavior == null)
         {
+            Debug.Log("First destination");
             seeker.SetSeekPosition(destination);
             currentTarget = destination;
             currentBehavior = seeker;   
@@ -39,6 +40,7 @@ public class PathFollower : SteeringBehavior
 
     public void nextBehavior()
     {
+        
         if (pathQueue.Count > 0)
         {
             currentTarget = pathQueue.Dequeue();
