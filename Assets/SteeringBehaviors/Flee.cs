@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Flee : SteeringBehavior
 {
-    private Rigidbody rb;
+    public Rigidbody rb;
     private bool unset = true;
     private Vector3 targetPosition;
-    public Flee(Rigidbody rb)
+
+    public void Awake()
     {
-        this.rb = rb;
+        rb = GetComponent<Rigidbody>();
     }
 
     public void setFearedPosition(Vector3 targetPosition)
@@ -18,7 +19,7 @@ public class Flee : SteeringBehavior
         this.unset = false;
     }
 
-    public Vector3 CalculateSteeringForce(float maxVelocity)
+    public override Vector3 CalculateSteeringForce(float maxVelocity)
     {
         if (!unset)
         {

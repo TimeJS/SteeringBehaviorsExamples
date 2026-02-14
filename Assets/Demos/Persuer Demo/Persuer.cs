@@ -10,10 +10,12 @@ public class Persuer : MonoBehaviour
     {
         Rigidbody rb = GetComponent<Rigidbody>();
         SteeringObject so = GetComponent<SteeringObject>();
-        Persue persuer = new Persue(gameObject);
+        Persue persuer = so.GetComponent<Persue>();
+        if (persuer == null)
+        {
+            persuer = so.gameObject.AddComponent<Persue>();
+        }
         persuer.target = persued;
-        so.AddSteeringBehavior(persuer);
-        
     }
 
    

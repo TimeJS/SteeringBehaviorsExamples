@@ -23,22 +23,21 @@ public class Persue : SteeringBehavior
 
     private Transform targetTransform;
     private Rigidbody targetRB;
-    private Transform xform;
+    public Transform xform;
     public float velocityTweak=1.0f;
     public float predictionWindow = 5;
-    private Rigidbody rb;
+    public Rigidbody rb;
     private bool unset = true;
    
 
-    // Start is called before the first frame update
-    public Persue(GameObject obj)
+    public void Awake()
     {
-        rb = obj.GetComponent<Rigidbody>();
-        xform = obj.GetComponent<Transform>();
+        rb = GetComponent<Rigidbody>();
+        xform = GetComponent<Transform>();
     }
 
     
-    public Vector3 CalculateSteeringForce(float maxVelocity)
+    public override Vector3 CalculateSteeringForce(float maxVelocity)
     {
         if (!unset){
             Vector3 predictedPosition = targetTransform.position + (targetRB.velocity * predictionWindow);

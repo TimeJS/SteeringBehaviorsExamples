@@ -6,8 +6,8 @@ public class SteeringObject : MonoBehaviour
 {
     public float maxForce = 1.0f;
     public float maxVelocity = 3.0f;
-	[SerializeReference]
-    public List<SteeringBehavior> steeringBehaviors = new List<SteeringBehavior>();
+
+    public SteeringBehavior[] steeringBehaviors;
         
     // Start is called before the first frame update
     void Start()
@@ -18,22 +18,26 @@ public class SteeringObject : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        steeringBehaviors = GetComponents<SteeringBehavior>();
         Vector3 steeringForce = new Vector3(0, 0, 0);
         foreach (SteeringBehavior steeringBehavior in steeringBehaviors)
         {
-            steeringForce = steeringForce + steeringBehavior.CalculateSteeringForce(maxVelocity);
+            if (steeringBehavior != null && steeringBehavior.enabled)
+            {
+                steeringForce = steeringForce + steeringBehavior.CalculateSteeringForce(maxVelocity);
+            }
         }
         GetComponent<Rigidbody>().AddForce(steeringForce);
     }
 
     public void AddSteeringBehavior(SteeringBehavior sb)
     {
-        steeringBehaviors.Add(sb);
+        // Deprecated, no-op or just add to list (which is overwritten in FixedUpdate anyway)
     }
 
     public void RemoveSteeringBehavior(SteeringBehavior sb)
     {
-        steeringBehaviors.Remove(sb);
+        // Deprecated
     }
 
 }

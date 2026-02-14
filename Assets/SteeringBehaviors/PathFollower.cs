@@ -6,19 +6,22 @@ public class PathFollower : SteeringBehavior
 {
     private Seeker seeker;
     private Arriver arriver;
-    private Rigidbody rb;
+    public Rigidbody rb;
     public float targetDistance = 1.0f;
     private Queue<Vector3> pathQueue = new Queue<Vector3>();
     private Vector3 currentTarget;
     
     private SteeringBehavior currentBehavior=null;
-    // Start is called before the first frame update
-    public PathFollower(Rigidbody rb)
+    
+    public void Awake()
     {
-        this.rb = rb;
-        seeker = new Seeker(rb);
+        rb = GetComponent<Rigidbody>();
+        seeker = gameObject.AddComponent<Seeker>();
+        seeker.enabled = false;
         seeker.tweaker = 3.0f;
-        arriver = new Arriver(rb, 3);
+        arriver = gameObject.AddComponent<Arriver>();
+        arriver.enabled = false;
+        arriver.decelerationConstant = 3;
     }
 
     public void AddDestination(Vector3 destination)
@@ -60,7 +63,7 @@ public class PathFollower : SteeringBehavior
         }
     }
 
-    public Vector3 CalculateSteeringForce(float maxVelocity)
+    public override Vector3 CalculateSteeringForce(float maxVelocity)
     {
         Vector3 result;
         if (currentBehavior != null)

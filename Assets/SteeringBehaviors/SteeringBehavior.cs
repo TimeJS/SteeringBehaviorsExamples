@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-	
-
-public interface SteeringBehavior 
+public abstract class SteeringBehavior : MonoBehaviour
 {
-    public Vector3 CalculateSteeringForce(float maxVelocity);
+    public abstract Vector3 CalculateSteeringForce(float maxVelocity);
 }

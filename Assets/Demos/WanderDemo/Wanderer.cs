@@ -9,8 +9,11 @@ public class Wanderer : MonoBehaviour
     {
 
         SteeringObject so = GetComponent<SteeringObject>();
-        Wander wander = new Wander(gameObject);
-        so.AddSteeringBehavior(wander);
+        Wander wander = so.GetComponent<Wander>();
+        if (wander == null)
+        {
+            wander = so.gameObject.AddComponent<Wander>();
+        }
     }
 
     // Update is called once per frame

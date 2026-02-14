@@ -12,10 +12,17 @@ public class ClickAvoider : MonoBehaviour
     {
         Rigidbody rb = GetComponent<Rigidbody>();
         SteeringObject so = GetComponent<SteeringObject>();
-        seeker = new Seeker(rb);
-        avoider = new ObstacleAvoider(gameObject);
-        so.AddSteeringBehavior(seeker);
-        so.AddSteeringBehavior(avoider);
+        seeker = so.GetComponent<Seeker>();
+        if (seeker == null)
+        {
+            seeker = so.gameObject.AddComponent<Seeker>();
+        }
+        
+        avoider = so.GetComponent<ObstacleAvoider>();
+        if (avoider == null)
+        {
+            avoider = so.gameObject.AddComponent<ObstacleAvoider>();
+        }
     }
 
     // Update is called once per frame

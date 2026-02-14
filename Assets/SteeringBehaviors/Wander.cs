@@ -6,15 +6,15 @@ public class Wander : SteeringBehavior
 {
     private Vector3 wanderTarget = Vector3.zero;
     public float wanderRadius = 8f;
-    private Rigidbody rb;
+    public Rigidbody rb;
     public float wanderDistance = 5f;
     public float wanderJitter = 25f;
     public float startingVelocity = 1.0f;
 
-    public Wander(GameObject obj)
+    public void Awake()
     {
         wanderTarget = new Vector3(0, 0, wanderRadius);
-        rb = obj.GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         rb.AddForce(new Vector3(0,0,startingVelocity));
     }
 
@@ -23,7 +23,7 @@ public class Wander : SteeringBehavior
         return Random.Range(-1f, 1f);
     }
 
-    public Vector3 CalculateSteeringForce(float maxVelocity)
+    public override Vector3 CalculateSteeringForce(float maxVelocity)
     {
         Vector3 targetJitter = new Vector3(NormalizedRandom() * wanderJitter,
             0, NormalizedRandom() * wanderJitter);

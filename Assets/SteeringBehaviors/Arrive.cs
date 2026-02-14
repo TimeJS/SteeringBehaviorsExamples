@@ -4,15 +4,13 @@ using System.Collections;
 public class Arriver: SteeringBehavior {
     Vector3 targetPosition;
     bool unset = true;
-    Rigidbody rb;
-    int decelerationConstant;
+    public Rigidbody rb;
+    public int decelerationConstant;
     public float tweaker = 1.7f;
 	
-    public Arriver(Rigidbody rb,int decelerationConstant,float tweaker = 1.7f )
+    public void Awake()
     {
-        this.rb = rb;
-        this.decelerationConstant = decelerationConstant;
-        this.tweaker = tweaker;
+        rb = GetComponent<Rigidbody>();
     }
 
     public void SetArrivalPosition(Vector3 targetPosition)
@@ -22,7 +20,7 @@ public class Arriver: SteeringBehavior {
     }
 
     // ReSharper disable Unity.PerformanceAnalysis
-    public Vector3 CalculateSteeringForce(float maxVelocity)
+    public override Vector3 CalculateSteeringForce(float maxVelocity)
     {
         Debug.Log("Enter Calculating arrival force");
         if (!unset)

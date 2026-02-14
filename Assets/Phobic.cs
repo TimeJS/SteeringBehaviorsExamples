@@ -10,8 +10,11 @@ public class Phobic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fleeBehavior = new Flee(GetComponent<Rigidbody>());
-        GetComponent<SteeringObject>().AddSteeringBehavior(fleeBehavior);
+        fleeBehavior = GetComponent<Flee>();
+        if (fleeBehavior == null)
+        {
+            fleeBehavior = gameObject.AddComponent<Flee>();
+        }
     }
 
     // Update is called once per frame

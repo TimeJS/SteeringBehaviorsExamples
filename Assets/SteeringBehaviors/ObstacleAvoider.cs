@@ -5,14 +5,14 @@ using UnityEngine;
 public class ObstacleAvoider : SteeringBehavior
 {
     public float boundingRadius;
-    private GameObject gameObj;
-    private Rigidbody rb;
-    private Transform objXform;
-    private Renderer renderer;
+    public GameObject gameObj;
+    public Rigidbody rb;
+    public Transform objXform;
+    public Renderer renderer;
     
-    public ObstacleAvoider(GameObject myGameObject)
+    public void Awake()
     {
-        gameObj = myGameObject;
+        gameObj = gameObject;
         rb = gameObj.GetComponent<Rigidbody>();
         objXform = gameObj.GetComponent<Transform>();
         renderer = gameObj.GetComponent<Renderer>();
@@ -35,7 +35,7 @@ public class ObstacleAvoider : SteeringBehavior
         
     }
 
-    public Vector3 CalculateSteeringForce(float maxVelocity)
+    public override Vector3 CalculateSteeringForce(float maxVelocity)
     {
         RaycastHit rayHit = new RaycastHit();
         int castMask = ~(

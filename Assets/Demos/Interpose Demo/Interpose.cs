@@ -19,9 +19,13 @@ public class Interpose : MonoBehaviour
     void Start()
     { 
         rb = GetComponent<Rigidbody>();
-        arriver = new Arriver(rb,decelerationConstant);
+        arriver = GetComponent<Arriver>();
+        if (arriver == null)
+        {
+            arriver = gameObject.AddComponent<Arriver>();
+        }
+        arriver.decelerationConstant = decelerationConstant;
         arriver.tweaker = velocityTweak;
-        GetComponent<SteeringObject>().AddSteeringBehavior(arriver);
         target1Rb = target1.GetComponent<Rigidbody>();
         target2Rb = target2.GetComponent<Rigidbody>(); 
     }
