@@ -13,8 +13,8 @@ public class ClickArriver : MonoBehaviour
     {
         Rigidbody rb = GetComponent<Rigidbody>();
         SteeringObject so = GetComponent<SteeringObject>();
-        arriver = new Arriver(rb,decelerationConstant);
-        so.AddSteeringBehavior(arriver);
+        arriver = so.gameObject.AddComponent<Arriver>();
+        arriver.decelerationConstant = decelerationConstant;
     }
 
     // Update is called once per frame

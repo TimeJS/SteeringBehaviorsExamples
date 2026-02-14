@@ -30,11 +30,6 @@ public class SteeringObject : MonoBehaviour
         GetComponent<Rigidbody>().AddForce(steeringForce);
     }
 
-    public void AddSteeringBehavior(SteeringBehavior sb)
-    {
-        // Deprecated, no-op or just add to list (which is overwritten in FixedUpdate anyway)
-    }
-
     public void RemoveSteeringBehavior(SteeringBehavior sb)
     {
         // Deprecated
