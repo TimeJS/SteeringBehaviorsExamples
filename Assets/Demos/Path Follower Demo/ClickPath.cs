@@ -11,7 +11,8 @@ public class ClickPath : MonoBehaviour
     void Start()
     {
         steeringObject = GetComponent<SteeringObject>();
-        pathBehavior = new PathFollower(GetComponent<Rigidbody>());
+        pathBehavior = gameObject.AddComponent<PathFollower>();
+        pathBehavior.rb = GetComponent<Rigidbody>();
         steeringObject.AddSteeringBehavior(pathBehavior);
     }
 

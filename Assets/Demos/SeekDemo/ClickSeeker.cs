@@ -12,11 +12,14 @@ public class ClickSeeker : MonoBehaviour
     {
         Rigidbody rb = GetComponent<Rigidbody>();
         SteeringObject so = GetComponent<SteeringObject>();
-        seeker = new Seeker(rb);
+        seeker = gameObject.AddComponent<Seeker>();
+        seeker.rb = rb;
         so.AddSteeringBehavior(seeker);
         if (breakingForce > 0)
         {
-            breaker = new Breaker(rb, breakingForce);
+            breaker = gameObject.AddComponent<Breaker>();
+            breaker.rb = rb;
+            breaker.breakingForce = breakingForce;
             so.AddSteeringBehavior(breaker);
         }
     }

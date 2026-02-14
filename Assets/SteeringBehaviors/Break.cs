@@ -1,16 +1,15 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public class Breaker:SteeringBehavior
+public class Breaker: MonoBehaviour, SteeringBehavior
 {
-    private Rigidbody rb;
-    private float breakingForce;
+    public Rigidbody rb;
+    public float breakingForce;
 
     // Constructor used in your ClickSeeker: new breaker(rb, breakingForce)
-    public Breaker(Rigidbody rigidbody, float force)
+    public void Awake()
     {
-        this.rb = rigidbody;
-        this.breakingForce = force;
+        if (rb == null) rb = GetComponent<Rigidbody>();
     }
 
     public Vector3 CalculateSteeringForce(float maxVelocity)

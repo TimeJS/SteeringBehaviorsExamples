@@ -9,7 +9,8 @@ public class Wanderer : MonoBehaviour
     {
 
         SteeringObject so = GetComponent<SteeringObject>();
-        Wander wander = new Wander(gameObject);
+        Wander wander = gameObject.AddComponent<Wander>();
+        wander.rb = GetComponent<Rigidbody>();
         so.AddSteeringBehavior(wander);
     }
 

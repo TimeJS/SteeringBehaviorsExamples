@@ -13,7 +13,9 @@ public class ClickArriver : MonoBehaviour
     {
         Rigidbody rb = GetComponent<Rigidbody>();
         SteeringObject so = GetComponent<SteeringObject>();
-        arriver = new Arriver(rb,decelerationConstant);
+        arriver = gameObject.AddComponent<Arriver>();
+        arriver.rb = rb;
+        arriver.decelerationConstant = decelerationConstant;
         so.AddSteeringBehavior(arriver);
     }
 

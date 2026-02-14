@@ -17,12 +17,15 @@ public class WanderAndEvade : MonoBehaviour
         //Evade setup
         Rigidbody rb = GetComponent<Rigidbody>();
         SteeringObject so = GetComponent<SteeringObject>();
-        Evade evader = new Evade(gameObject);
+        Evade evader = gameObject.AddComponent<Evade>();
+        evader.rb = rb;
+        evader.xform = transform;
         evader.target = evaded;
         so.AddSteeringBehavior(evader);
         // wander setup
        
-        Wander wander = new Wander(gameObject);
+        Wander wander = gameObject.AddComponent<Wander>();
+        wander.rb = rb;
         so.AddSteeringBehavior(wander);
     }
 

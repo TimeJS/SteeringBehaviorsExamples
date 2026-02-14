@@ -11,7 +11,8 @@ public class ClickFlee : MonoBehaviour
     {
         Rigidbody rb = GetComponent<Rigidbody>();
         SteeringObject so = GetComponent<SteeringObject>();
-        fleeBehavior = new Flee(rb);
+        fleeBehavior = gameObject.AddComponent<Flee>();
+        fleeBehavior.rb = rb;
         so.AddSteeringBehavior(fleeBehavior);
     }
 
