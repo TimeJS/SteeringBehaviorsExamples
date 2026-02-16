@@ -4,7 +4,7 @@ using System.Collections;
 public class Seeker : SteeringBehavior {
     Vector3 targetPosition;
     bool unset = true;
-    public Rigidbody rb;
+    private Rigidbody rb;
     public float tweaker = 1.0f;
 
     public void Awake()
