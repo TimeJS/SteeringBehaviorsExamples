@@ -6,6 +6,7 @@ public class SteeringObject : MonoBehaviour
 {
     public float maxForce = 1.0f;
     public float maxVelocity = 3.0f;
+    public bool isPlayer = false;
 
     public SteeringBehavior[] steeringBehaviors;
    

@@ -1918,7 +1918,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6343912597935838708, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
       propertyPath: playTime
-      value: 15
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: -6343912597935838708, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
       propertyPath: scoreText
@@ -1928,6 +1928,26 @@ PrefabInstance:
       propertyPath: gameOverText
       value: 
       objectReference: {fileID: 778002684}
+    - target: {fileID: -4633212803809884236, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
+      propertyPath: isPlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645196990248124761, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
+      propertyPath: wanderDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2645196990248124761, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
+      propertyPath: startingVelocity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557894364555684448, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
+      propertyPath: velocityTweak
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557894364555684448, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
+      propertyPath: predictionWindow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4006447673907411420, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5577389
@@ -1972,7 +1992,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2627129736522196286, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
