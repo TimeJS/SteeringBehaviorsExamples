@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Evade : SteeringBehavior
 {
-    private GameObject _target;
+    public GameObject _target;
     public GameObject target
     {
         set
@@ -21,8 +21,8 @@ public class Evade : SteeringBehavior
         }
     }
 
-    private Transform targetTransform;
-    private Rigidbody targetRB;
+    public Transform targetTransform;
+    public Rigidbody targetRB;
     public Transform xform;
     public float velocityTweak=1.0f;
     public float predictionWindow = 5;

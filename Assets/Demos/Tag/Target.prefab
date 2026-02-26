@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: -7118198117984106855}
   m_Layer: 0
   m_Name: Target
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,6 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxForce: 1
   maxVelocity: 3
+  isPlayer: 0
   steeringBehaviors: []
 --- !u!114 &-7617920366885502773
 MonoBehaviour:
@@ -201,6 +202,8 @@ MonoBehaviour:
   it_material: {fileID: 2100000, guid: 6ee276e88eab9e6498a9dde4c6f7c5a8, type: 2}
   notit_material: {fileID: 2100000, guid: e6c1bf9b6448fe14db0f586eb9b90946, type: 2}
   scoreText: {fileID: 0}
+  gameOverText: {fileID: 0}
+  playTime: 60
   isIt: 0
 --- !u!114 &-780810533600002870
 MonoBehaviour:
