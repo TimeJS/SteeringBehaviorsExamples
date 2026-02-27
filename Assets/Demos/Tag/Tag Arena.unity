@@ -1946,7 +1946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2645196990248124761, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
       propertyPath: wanderDistance
-      value: 10.4
+      value: 15.66
       objectReference: {fileID: 0}
     - target: {fileID: 2645196990248124761, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
       propertyPath: startingVelocity
@@ -1962,7 +1962,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3557894364555684448, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
       propertyPath: predictionWindow
-      value: 0.62
+      value: 17.91
       objectReference: {fileID: 0}
     - target: {fileID: 4006447673907411420, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2014,16 +2014,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7059834828117289623, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
       insertIndex: 5
-      addedObject: {fileID: 1770994625}
-    - targetCorrespondingSourceObject: {fileID: 7059834828117289623, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
-      insertIndex: 6
-      addedObject: {fileID: 1770994627}
-    - targetCorrespondingSourceObject: {fileID: 7059834828117289623, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
-      insertIndex: 7
       addedObject: {fileID: 1770994628}
-    - targetCorrespondingSourceObject: {fileID: 7059834828117289623, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
-      insertIndex: 10
-      addedObject: {fileID: 1770994622}
   m_SourcePrefab: {fileID: 100100000, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
 --- !u!1 &1649422495
 GameObject:
@@ -2071,54 +2062,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7059834828117289623, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
   m_PrefabInstance: {fileID: 1597805664}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1770994622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1770994611}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53e77700ab5e35145bf17019aef8add1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boundingRadius: 18.93
-  gameObj: {fileID: 1649422495}
-  rb: {fileID: 0}
-  objXform: {fileID: 0}
-  renderer: {fileID: 0}
-  velocityMult: 2
---- !u!114 &1770994625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1770994611}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c30df108c19f3fd44ab752a03330dfe5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flockTag: 
-  neighborhoodRadius: 20
-  tweaker: 16.68
---- !u!114 &1770994627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1770994611}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d116a620bdbfbe45814e4f661f97ec5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flockTag: 
-  neighborhoodRadius: 9.53
-  tweaker: -14.6
 --- !u!114 &1770994628
 MonoBehaviour:
   m_ObjectHideFlags: 0
